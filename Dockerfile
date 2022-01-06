@@ -1,5 +1,5 @@
 FROM gitlab/gitlab-runner:latest
-ARG DOCKER_GID=999
+ARG DOCKER_GID=944
 USER root
 
 # docker install
@@ -13,5 +13,5 @@ RUN chmod +x /install_aws.sh && \
     /install_aws.sh
 
 # set jenkins user to host docker group
-RUN /usr/sbin/groupadd -g ${DOCKER_GID:-998} -f docker && \
+RUN /usr/sbin/groupadd -g ${DOCKER_GID:-944} -f docker && \
     /usr/sbin/usermod -aG docker gitlab-runner
