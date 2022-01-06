@@ -14,4 +14,4 @@ RUN chmod +x /install_aws.sh && \
 
 # set jenkins user to host docker group
 RUN /usr/sbin/groupadd -g ${DOCKER_GID:-998} -f docker && \
-    /usr/sbin/usermod -aG docker root
+    /usr/sbin/usermod -aG docker gitlab-runner
