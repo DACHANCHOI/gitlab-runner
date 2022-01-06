@@ -1,5 +1,5 @@
 FROM gitlab/gitlab-runner:latest
-ARG DOCKER_GID=998
+ARG DOCKER_GID=999
 USER root
 
 # docker install
