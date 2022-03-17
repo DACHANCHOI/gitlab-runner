@@ -12,6 +12,11 @@ COPY scripts/install_aws.sh /install_aws.sh
 RUN chmod +x /install_aws.sh && \
     /install_aws.sh
 
+# tf ansible packer install
+COPY scripts/install_tf_ansible_packer.sh /install_tf_ansible_packer.sh
+RUN chmod +x /install_tf_ansible_packer.sh && \
+    /install_tf_ansible_packer.sh
+
 # set jenkins user to host docker group
 RUN /usr/sbin/groupadd -g ${DOCKER_GID:-944} -f docker && \
     /usr/sbin/usermod -aG docker gitlab-runner
